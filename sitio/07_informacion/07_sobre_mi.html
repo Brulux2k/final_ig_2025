@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--Título de la página-->
+		<title>Slam Dunk - Sobre mí</title>
+		<!--Bootstrap CSS-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<!--Íconos del sitio-->
+		<link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+		<!--Bootstrap JS-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<!--Mi archivo CSS-->
+		<link rel="stylesheet" href="../aa_estilos/aa_stylo.css">
+		<!--Mi archivo JS-->
+		<script src="../bb_scripts/bb_script.js" defer></script>
+	</head>
+
+	<body id="cinta">
+	<div class="d-flex">
+
+	<!-- BARRITA -->
+	<header id="barrita" class="barrita-toggle">
+		<div class="barrita-titulo">
+			<a href="../../index.html">Inicio</a>
+		</div>
+
+		<!-- Navegación del sitio! -->
+		<nav>
+			<ul class="barrita-navegacion p-0">
+
+				<!-- Principal "Sinopsis" -->
+				<li class="barrita-item">
+					<a href="../01_sinopsis/index.html" class="barrita-link">
+						<span>Sinopsis</span>
+					</a>
+				</li>
+
+				<!-- Principal "Manga y transmedia"-->
+				<li class="barrita-item">
+					<a href="../02_manga_y_transmedia/index.html" class="barrita-link">
+						<span>Manga y transmedia</span>
+					</a>
+				</li>
+				
+				<!-- Principal "Takehiko Inoue" -->
+				<li class="barrita-item">
+					<a href="../03_autor/index.html" class="barrita-link">
+						<span>Takehiko Inoue</span>
+					</a>
+				</li>
+
+				<!-- Principal "Juego!" -->
+				<li class="barrita-item">
+					<a href="../04_juego/index.html" class="barrita-link">
+						<span>Juego!</span>
+					</a>
+				</li>
+
+				<!-- Principal "Galeria" -->
+				<li class="barrita-item">
+					<a href="../05_galeria/index.html" class="barrita-link">
+						<span>Galería</span>
+					</a>
+				</li>
+				
+				<!-- Principal "Fandom" -->
+				<li class="barrita-item">
+					<a href="../06_fandom/index.html" class="barrita-link">
+						<span>Fandom</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="info-item">	
+			<li class="barrita-item">
+				<a href="#" class="barrita-link collapsed has-dropdown" data-bs-toggle="collapse"
+					data-bs-target="#info" aria-expanded="true" aria-controls="info">
+					<span>Info</span>
+				</a>
+				<!-- Carpeta Info con desplegable para los principales "Sobre mí" y "Contacto" -->
+				<ul id="info" class="barrita-dropdown list-unstyled collapse" data-bs-parent="#barrita">
+					<li class="barrita-subitem">
+						<a href="#" class="barrita-link barrita-sub">Sobre mí</a>
+					</li>
+					<li class="barrita-subitem">
+						<a href="07_contacto.html" class="barrita-link barrita-sub">Contacto</a>
+					</li>
+				</ul>
+			</li>
+		</div>
+	</header>
+
+	<!------------------------------------------------------------------>
+
+
+	
+	<!-- CONTENIDO -->
+	<div class="main">
+
+		<!-- Sócalo superior, ícono y botón para desplegar la BARRITA -->
+		<aside class="desplegable navbar-expand">
+			<button class="toggler-boton" type="button">
+				<i class="lni lni-menu-hamburger-1"></i>
+			</button>
+		</aside>
+
+		<!-- CONTENIDO PRINCIPAL -->
+		<main class="p-4">
+			<div class="container-fluid">
+				<div class="mb-3 text-center">
+					<h1 class="contenido">Slam Dunk</h1>
+				</div>
+				<div class="complementaria mb-3 text-center">
+					<section>
+						<h2>Sobre mí</h2>
+						<h4>¡Hola!</h4>
+						<p>
+							Mi nombre es Bruno Spanghero y soy quien desarrollo este sitio web. Además de ser estudiante en la carrera de Artes Multimediales de la UNA soy docente de inglés en escuelas secundarias públicas y piloto de dron. Sin embargo, mis pasiones están en la danza, los videjuegos, el anime y el básquet, dos de las cuales hoy están representadas aquí en la obra de Inoue sobre la que decidí volcar mi trabajo.
+						</p>
+						<p>
+							¡Espero que lo disfruen!
+						</p>
+						<div class="filaImg">
+							<img id="perfil" src="../cc_media/p00_yo.jpg" alt="El desarrollador" class="img-fluid">
+						</div>
+						<p class="epigrafe">
+							Yo con anteojos
+						</p>
+					</section>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	</div>		
+	</body>
+	
+</html>

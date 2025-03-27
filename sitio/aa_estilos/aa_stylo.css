@@ -1,0 +1,457 @@
+/* ---------------------------- FUENTE TIPOGRÁFICA ---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+
+
+/* ---------------------------- ELEMENTOS VARIOS DEL HTML + algunas clases ---------------------------- */
+
+/* Nav independiente del body que no se ve afectado por su tamaño */
+header {
+    position: fixed;
+    height: 100vh;
+}
+
+/* Body que ocupa toda la pantalla */
+body {
+    height: 100vh;
+    font-family: 'Hubot Sans', sans-serif;
+}
+
+/* Contenedor principal con altura completa de la ventana*/
+.main {
+    padding-left: 264px;
+    transition: padding-left 0.4s ease-in-out;
+    width: 100%;
+}
+
+.contenido {
+    background-color: #300b0bd0;
+    color: #ffffff;
+    padding: 1rem;
+    height: 100%;
+}
+
+h1, h2, h3 {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+h4 {
+    padding: 0.5rem 7.25rem;  
+    text-align: left;
+    margin-left: 0;
+}
+
+p {
+    padding: 0.5rem 7.25rem;
+    text-align: justify;
+    font-size: 1.175rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.links-en-contenido {
+    text-align: center;
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    transition: all 0.35s;
+    display: block;
+    font-size: 1.25rem;
+    background-color: #300b0bd0;
+    font-size: 1.05rem;
+    padding-left: 2rem;
+}
+
+.links-en-contenido:hover {
+    background-color: #f9f6f630;
+}
+
+
+
+
+
+
+/* ---------------------------- FONDO CON ANIMACIÓN DE IMÁGENES ---------------------------- */
+
+/*  Contenedor para la animación de las imágenes. Es una cinta que se desplaza de manera infinita verticalmente,
+    pasando de una imagen a la otra sin cortes, de manera contigua. */
+#cinta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url('../cc_media/slam_fondo_01.jpg'),
+        url('../cc_media/slam_fondo_02.jpg'),
+        url('../cc_media/slam_fondo_03.jpg'),
+        url('../cc_media/slam_fondo_04.jpg'),
+        url('../cc_media/slam_fondo_05.jpg');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: 0 0, 0 20%, 0 40%, 0 60%, 0 80%;
+    animation: scrollCinta 90s linear infinite;
+}
+
+/* Keyframes para la animación */
+@keyframes scrollCinta {
+    0% {
+        background-position: 0 0, 0 20%, 0 40%, 0 60%, 0 80%; /* <--- Posiciones iniciales */
+    }
+    100% {
+        background-position: 0 100%, 0 120%, 0 140%, 0 160%, 0 180%; /* <--. Desplazamiento hacia abajo */
+    }
+}
+
+
+
+/* ---------------------------- BARRITA DE NAVEGACIÓN DESPLEGABLE + botones y enlaces ---------------------------- */
+
+/* Barrita con ancho fijo, fondo, diseño en columna y transición */
+#barrita {
+    max-width: 264px;
+    min-width: 264px;
+    transition: all 0.4s ease-in-out;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barrita cuando está escondida */
+#barrita.collapsed {
+    margin-left: -264px;
+}    
+
+/* Cuando la barrita está colapsada busca los elementos elegidos de su mismo nivel y cambia el padding a 0 */
+#barrita.collapsed ~ .main {
+    padding-left: 0;
+}  
+
+/* Botón que muestra la barrita */
+.toggler-boton {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+/* Estilo del ícono dentro del botón */
+.toggler-boton i {
+    font-size: 1.75rem;
+    color: #dfdfdf;
+    font-weight: 10000;
+}
+
+/* Sócalo superior que contiene el botón que despliega la barrita */
+.desplegable {
+    padding: 1.15rem 1.5rem;
+    background-color: #331d1d;
+}
+
+/* Contenedor para la barrita */
+.barrita-navegacion {
+    flex: 1 1 auto;
+}
+
+/* Título para la barrita */
+.barrita-titulo {
+    padding: 1.15rem 1.5rem;
+    text-align: center;
+}
+
+/* Enlace del Título */
+.barrita-titulo a {
+    color: #FFF;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+/* Posición del ítem Info */
+.info-item {
+    margin-top: auto;
+}
+
+/* Enlaces de los items de la barrita */
+.barrita-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    position: relative;
+    transition: all 0.35s;
+    display: block;
+    font-size: 1.25rem;
+}
+
+/* Pequeña diferencia entre los enlaces que están encapsulados en carpetas */
+.barrita-sub {
+    background-color: #0a0a0a;
+    font-size: 1.05rem;
+    padding-left: 2rem;
+}
+
+/* Animación del mouse sobre enlaces de la barrita*/
+.barrita-link:hover {
+    background-color: #f9f6f630;
+}
+
+/* Flechita que hace de desplegable para el menú colapsable de la barrita */
+.barrita-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+/* Cambia la dirección de la flecha cuando el menú está colapsado */
+.barrita-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}    
+
+
+
+
+
+
+/* ---------------------------- ESTILOS DE LAS IMÁGENES y relativos ---------------------------- */
+/* Galería */
+.galeria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #000;
+}
+
+.galeria img:hover {
+    transform: scale(1.25);
+}
+
+/* Para fotos y pósters */
+.filaImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem;
+}
+
+.filaImg .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    flex: 1;
+}
+
+.filaImg img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    border: solid black 3px;
+}
+
+/* Específico de los pósters */
+.posters img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    border: solid black 5px;
+}
+.posters img:hover {
+    transform: scale(1.1);
+}
+
+/* Epígrafe */
+.epigrafe {
+    text-align: center;
+    font-size: 1rem;
+}
+
+#v01 {
+    width: 68%;
+}
+
+#anden {
+    width: 50%;
+}
+
+#perfil {
+    width: 25%;
+}
+
+
+
+
+/* ---------------------------- ESTILOS DEL JUEGO ---------------------------- */
+
+#juego-tiro {
+    background-color: #745a5a88;
+    color: #ffffff;
+    padding: 1rem;
+    margin: 1.5rem;
+}
+
+canvas {
+    background-color: #745a5a88;
+    margin: 1.5rem;
+}
+
+.boton-de-juego {
+    text-align: center;
+    padding: .625rem 1.625rem;
+    color: #ffffff;
+    transition: all 0.35s;
+    display: block;
+    font-size: 1.25rem;
+    background-color: #000000c0;
+    font-size: 1.05rem;
+    padding-left: 2rem;
+}
+
+.boton-de-juego:hover {
+    background-color: #cbcbcba3;
+    color: #000000;
+}
+
+
+
+
+
+
+/* ---------------------------- ESTILOS DEL FORMULARIO ---------------------------- */
+.complementaria {
+    background-color: #000000c9;
+    color: #ffffff;
+    padding: 1rem;
+    height: 100%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.complementaria label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.complementaria input,
+.complementaria textarea {
+    background-color: #ffffffe2;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 3px solid #a1887ac2;
+    font-size: 1rem;
+}
+
+.complementaria textarea {
+    height: 150px;
+    resize: none;
+}
+
+.complementaria input[type="radio"],
+.complementaria input[type="checkbox"] {
+    width: auto;
+}
+
+.radios {
+    background-color: #2d2b2b7d;
+    padding: 2rem;
+    width: auto;
+}
+
+#enviar {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #c72c2c81;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3075s;
+}
+
+#enviar:hover {
+    background-color: #2339889a;
+}
+
+/* Mensajes de error para el validador del form */
+.error-message {
+    margin-top: 5px;
+    color: red;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.error-message i {
+    margin-right: 5px;
+}
+
+
+
+
+
+/* ---------------------------- RESPONSIVE ---------------------------- */
+
+/* En pantallas menores a 768px... */
+@media (max-width:768px) {
+
+    /* Esconde la barrita, corriéndola de la pantalla */
+    .barrita-toggle {
+        margin-left: -264px;
+    }
+
+    /* Con la barrita colapsada, se muestra */
+    #barrita.collapsed {
+        margin-left: 0;
+    }
+
+    /* Algunos ajustes extra para resoluciones menores a 768px */
+    .main {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    header {
+        position: fixed;
+        height: 100vh;
+        z-index: 1;
+    }
+    
+    .toggler-boton {
+        position: relative;
+        z-index: 2;
+    }
+
+    p {
+        padding: 0.2rem 1.25rem;
+        text-align: justify;
+        font-size: 1.05rem;
+    }
+}

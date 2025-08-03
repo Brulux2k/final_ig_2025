@@ -24,69 +24,103 @@
 	<!-- BARRITA -->
 	<header id="barrita" class="barrita-toggle">
 		<div class="barrita-titulo">
-			<a href="../../index.html">Inicio</a>
+			<a href="/index.html">Inicio</a>
 		</div>
 
-		<!-- Navegación del sitio! -->
-		<nav>
+   		<nav>
 			<ul class="barrita-navegacion p-0">
 
-				<!-- Principal "Sinopsis" -->
+				<!-- Sinopsis con subpáginas -->
 				<li class="barrita-item">
-					<a href="#" class="barrita-link">
+					<a href="/sitio/01_sinopsis/index.html" class="barrita-link collapsed has-dropdown" data-bs-toggle="collapse"
+						data-bs-target="#sinopsisSubmenu" aria-expanded="false" aria-controls="sinopsisSubmenu">
 						<span>Sinopsis</span>
 					</a>
+					<ul id="sinopsisSubmenu" class="barrita-dropdown list-unstyled collapse" data-bs-parent="#barrita">
+						<li class="barrita-subitem">
+							<a href="/sitio/01_sinopsis/index.html" class="barrita-link barrita-sub">Historia</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/01_sinopsis/01_personajes.html" class="barrita-link barrita-sub">Personajes</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/01_sinopsis/01_inspiracion_y_referencias.html" class="barrita-link barrita-sub">Inspiración y referencias</a>
+						</li>
+					</ul>
 				</li>
 
-				<!-- Principal "Manga y transmedia"-->
+				<!-- Manga y transmedia con subpáginas -->
 				<li class="barrita-item">
-					<a href="../02_manga_y_transmedia/index.html" class="barrita-link">
+					<a href="/sitio/02_manga_y_transmedia/index.html" class="barrita-link collapsed has-dropdown" data-bs-toggle="collapse"
+						data-bs-target="#mangaSubmenu" aria-expanded="false" aria-controls="mangaSubmenu">
 						<span>Manga y transmedia</span>
 					</a>
-				</li>
-				
-				<!-- Principal "Takehiko Inoue" -->
-				<li class="barrita-item">
-					<a href="../03_autor/index.html" class="barrita-link">
-						<span>Takehiko Inoue</span>
-					</a>
+					<ul id="mangaSubmenu" class="barrita-dropdown list-unstyled collapse" data-bs-parent="#barrita">
+						<li class="barrita-subitem">
+							<a href="/sitio/02_manga_y_transmedia/index.html" class="barrita-link barrita-sub">Publicación</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/02_manga_y_transmedia/02_anime.html" class="barrita-link barrita-sub">Anime</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/02_manga_y_transmedia/02_pelicula.html" class="barrita-link barrita-sub">Película</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/02_manga_y_transmedia/02_videojuegos.html" class="barrita-link barrita-sub">Videojuegos</a>
+						</li>
+					</ul>
 				</li>
 
-				<!-- Principal "Juego!" -->
+				<!-- Takehiko Inoue con subpáginas -->
 				<li class="barrita-item">
-					<a href="../04_juego/index.html" class="barrita-link">
+					<a href="/sitio/03_autor/index.html" class="barrita-link collapsed has-dropdown" data-bs-toggle="collapse"
+						data-bs-target="#autorSubmenu" aria-expanded="false" aria-controls="autorSubmenu">
+						<span>Takehiko Inoue</span>
+					</a>
+					<ul id="autorSubmenu" class="barrita-dropdown list-unstyled collapse" data-bs-parent="#barrita">
+						<li class="barrita-subitem">
+							<a href="/sitio/03_autor/index.html" class="barrita-link barrita-sub">Sobre el autor</a>
+						</li>
+						<li class="barrita-subitem">
+							<a href="/sitio/03_autor/03_obras.html" class="barrita-link barrita-sub">Obras</a>
+						</li>
+					</ul>
+				</li>
+
+				<!-- Juego (sin subpáginas) -->
+				<li class="barrita-item">
+					<a href="/sitio/04_juego/index.html" class="barrita-link">
 						<span>Juego!</span>
 					</a>
 				</li>
-				
-				<!-- Principal "Galeria" -->
+
+				<!-- Galería (sin subpáginas) -->
 				<li class="barrita-item">
-					<a href="../05_galeria/index.html" class="barrita-link">
+					<a href="/sitio/05_galeria/index.html" class="barrita-link">
 						<span>Galería</span>
 					</a>
 				</li>
 
-				<!-- Principal "Fandom" -->
+				<!-- Fandom (sin subpáginas) -->
 				<li class="barrita-item">
-					<a href="../06_fandom/index.html" class="barrita-link">
+					<a href="/sitio/06_fandom/index.html" class="barrita-link">
 						<span>Fandom</span>
 					</a>
 				</li>
 			</ul>
-		</nav>
+    	</nav>
 		<div class="info-item">	
 			<li class="barrita-item">
 				<a href="#" class="barrita-link collapsed has-dropdown" data-bs-toggle="collapse"
-					data-bs-target="#info" aria-expanded="true" aria-controls="info">
+					data-bs-target="#info" aria-expanded="false" aria-controls="info">
 					<span>Info</span>
 				</a>
-				<!-- Carpeta Info con desplegable para los principales "Sobre mí" y "Contacto" -->
 				<ul id="info" class="barrita-dropdown list-unstyled collapse" data-bs-parent="#barrita">
 					<li class="barrita-subitem">
-						<a href="../07_informacion/07_sobre_mi.html" class="barrita-link barrita-sub">Sobre mí</a>
+						<a href="/sitio/07_informacion/07_sobre_mi.html" class="barrita-link barrita-sub">Sobre mí</a>
 					</li>
 					<li class="barrita-subitem">
-						<a href="../07_informacion/07_contacto.html" class="barrita-link barrita-sub">Contacto</a>
+						<a href="/sitio/07_informacion/07_contacto.html" class="barrita-link barrita-sub">Contacto</a>
 					</li>
 				</ul>
 			</li>

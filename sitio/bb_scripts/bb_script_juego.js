@@ -11,9 +11,20 @@ toggler.addEventListener("click", function () {
 
 
 /* ---------------------------- JUEGO ---------------------------- */
-const canvas = document.getElementById("gameCanvas");
+
+const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+/* Redimensiona el canvas para adaptarlo al responsive */
+function redimensionarCanvas() {
+    const size = canvas.offsetWidth; // Toma el tamaño mostrado en pantalla
+    canvas.width = size;
+    canvas.height = size;
+    // Si tienes función de redibujar, llamala aquí
+    // drawGame();
+}
+window.addEventListener('resize', redimensionarCanvas);
+redimensionarCanvas();
 
 
 /* DIBUJA EL ÁREA de la cancha de básket. Puramente estético -------------------------------------------------------------- */

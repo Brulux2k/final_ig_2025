@@ -189,7 +189,7 @@ a {
 /* Pequeña diferencia entre los enlaces que están encapsulados en carpetas */
 .barrita-sub {
     background-color: #0a0a0a;
-    font-size: 1.05rem;
+    font-size: 1rem;
     padding-left: 2rem;
 }
 
@@ -208,22 +208,20 @@ a {
     position: absolute;
     right: 1.5rem;
     top: 1.4rem;
-    transform: rotate(45deg);
+    transform: rotate(-135deg);
     transition: all .2s ease-out;
 }
 
 /* Cambia la dirección de la flecha cuando el menú está colapsado */
 .barrita-link[data-bs-toggle="collapse"].collapsed::after {
-    transform: rotate(-135deg);
+    transform: rotate(45deg);
     transition: all .2s ease-out;
-}    
-
-
-
+}
 
 
 
 /* ---------------------------- ESTILOS DE LAS IMÁGENES y relativos ---------------------------- */
+
 /* Galería */
 .galeria {
     display: flex;
@@ -310,7 +308,8 @@ a {
 
 canvas {
     background-color: #745a5a88;
-    margin: 1.5rem;
+    margin: 1.5rem auto;
+    aspect-ratio: 1 / 1;
 }
 
 .boton-de-juego {
@@ -333,9 +332,8 @@ canvas {
 
 
 
-
-
 /* ---------------------------- ESTILOS DEL FORMULARIO ---------------------------- */
+
 .complementaria {
     background-color: #000000c9;
     color: #ffffff;
